@@ -1,0 +1,56 @@
+﻿@{
+    ViewData["Title"] = "Registro";
+}
+    
+    
+
+    <div class="container">
+        <div class="d-flex justify-content-center h-100">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Registro</h3>
+
+                    @if (ViewBag.msg != null)
+                    {
+                        <div class="w3-text-white w3-center">
+                            <p><strong>@ViewBag.msg</strong></p>
+                        </div>
+                    }
+
+                </div>
+                <div class="card-body">
+                    <form asp-action="Register" asp-controller="Home" method="post">
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            </div>
+                            <input type="text" name="mail" class="form-control" placeholder="Ingrese su mail">
+
+                        </div>
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-key"></i></span>
+                            </div>
+                            <input type="password" name="pass" class="form-control" placeholder="Ingrese una contraseña">
+                        </div>
+
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-key"></i></span>
+                            </div>
+                            <input type="text" name="key" class="form-control" placeholder="AAAA-BBBB-1111-2222-3333">
+                        </div>
+
+                        <div class="form-group">
+                            <input type="submit" value="Registrarse" class="btn float-right login_btn">
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer">
+                    <div class="d-flex justify-content-center links">
+                        ¿Ya tenes cuenta? Ingresa acá <a asp-controller="Home" asp-action="Login"> Login</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
